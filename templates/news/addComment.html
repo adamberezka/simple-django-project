@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div  style="margin: 20px;">
+    <div style="border-style: solid; border-width: 2px; border-color: black; padding: 5px;">
+        <b>Topic:</b>
+    </div>
+    <div style="border-style: solid; border-width: 2px; border-color: black; border-top-style: none; padding: 5px;">
+        {{ news.topic }}
+    </div>
+</div>
+
+<div style="margin: 20px;">
+    <div style="border-style: solid; border-width: 2px; border-color: black; padding: 5px;">
+        <b>Author:</b>
+    </div>
+    <div style="border-style: solid; border-width: 2px; border-color: black; border-top-style: none; padding: 5px;">
+        {{ news.author }}
+    </div>
+</div>
+
+<div style="margin: 20px;">
+    <div style="border-style: solid; border-width: 2px; border-color: black; padding: 5px;">
+        <b>Text:</b>
+    </div>
+    <div style="border-style: solid; border-width: 2px; border-color: black; border-top-style: none; padding: 5px;">
+        {{ news.text }}
+    </div>
+</div>
+
+<div style="margin: 20px;">
+    <div style="border-style: solid; border-width: 2px; border-color: black; padding: 5px;">
+        <b>Create time:</b>
+    </div>
+    <div style="border-style: solid; border-width: 2px; border-color: black; border-top-style: none; padding: 5px;">
+        {{ news.create_time }}
+    </div>
+</div>
+
+<div style="margin: 20px;">
+    <div style="border-style: solid; border-width: 2px; border-color: black; padding: 5px;">
+        <b>Edit time:</b>
+    </div>
+    <div style="border-style: solid; border-width: 2px; border-color: black; border-top-style: none; padding: 5px;">
+        {{ news.last_edit_time }}
+    </div>
+</div>
+
+<b>Your Comment: </b>
+
+<form action="" method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="ADD COMMENT">
+</form>
+
+{% endblock %}
